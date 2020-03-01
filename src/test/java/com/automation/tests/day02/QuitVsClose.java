@@ -13,8 +13,11 @@ public class QuitVsClose {
         WebDriver driver = new ChromeDriver();
 
         driver.get("http://practice.cybertekschool.com/open_new_tab");
-        Thread.sleep(40000);
 
+        Thread.sleep(5000);
+
+//        driver.close(); will close only one window
+        driver.quit(); //to close all windows
 
 
 
