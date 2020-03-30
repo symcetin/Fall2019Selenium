@@ -5,11 +5,14 @@ import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CssSelector {
 
     public static void main(String[] args) {
-        WebDriver driver = DriverFactory.createDriver("chrome");
+        // WebDriver driver = DriverFactory.createDriver("chrome");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/chromedriver");
+       WebDriver driver = new ChromeDriver();
         driver.get("http://practice.cybertekschool.com/multiple_buttons");
         WebElement heading= driver.findElement(By.cssSelector(".h3"));
         WebElement home = driver.findElement(By.cssSelector(".nav-link"));
