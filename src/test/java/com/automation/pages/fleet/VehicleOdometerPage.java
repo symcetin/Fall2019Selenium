@@ -37,6 +37,8 @@ public class VehicleOdometerPage extends AbstractPageBase {
     @FindBy(xpath = "//table[@class='ui-datepicker-calendar']//td")
     private List<WebElement> dateList;
 
+    @FindBy(xpath = "(//button[@type='submit'])[1]")
+    private WebElement save_close;
     @FindBy(css = "[title='Cancel")
     private WebElement cancel;
 
@@ -53,11 +55,13 @@ public class VehicleOdometerPage extends AbstractPageBase {
     public void fillInfo(){
         BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.visibilityOf(odometerValue));
-        odometerValue.sendKeys("odometer");
+        odometerValue.sendKeys("2070");
         date.click();
         BrowserUtils.wait(2);
         dateList.get(5).click();
-        unit.click();
+       // unit.click();
+        driver.sendKeys("driver");
+        save_close.click();
     }
 
     public Boolean clickCancel(){
