@@ -4,6 +4,7 @@ import com.automation.pages.LoginPage;
 import com.automation.pages.fleet.VehiclesPage;
 import com.automation.tests.vytrack.AbstractTestBase;
 import com.automation.utilities.Driver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,5 +22,6 @@ public class NewVehiclesTests extends AbstractTestBase {
         String actualTitle = Driver.getDriver().getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitle);
+
     }
 }

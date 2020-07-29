@@ -2,6 +2,7 @@ package com.automation.tests.day08;
 
 import org.testng.Assert;
 import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
 
 public class BasicTestNGTests {
     //runs only once before @BeforeClass and @BeforeMethod
@@ -58,5 +59,6 @@ public class BasicTestNGTests {
         // it calls hard assertion
         // if assertion fails - it stops the execution (due to exception)
         Assert.assertTrue(num1<num2);
+
     }
 }

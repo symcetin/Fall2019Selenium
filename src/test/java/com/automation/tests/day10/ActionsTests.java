@@ -18,7 +18,7 @@ public class ActionsTests {
 
     @BeforeMethod
     public void setup(){
-        WebDriverManager.chromedriver().version("79").setup();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         actions = new Actions(driver);
     }
@@ -40,6 +40,7 @@ public class ActionsTests {
                 pause(1000).
                 moveToElement(img3).
                 build().perform();
+
 
         //hover on the first image
         //verify that "name: user1" is displayed

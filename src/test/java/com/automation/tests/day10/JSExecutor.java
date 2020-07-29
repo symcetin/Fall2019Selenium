@@ -18,7 +18,9 @@ public class JSExecutor {
 
     @BeforeMethod
     public void setup(){
-//        driver = DriverFactory.createDriver("chrome");
+//     driver = DriverFactory.createDriver("chrome");
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
 
     }
 
@@ -50,6 +52,7 @@ public class JSExecutor {
         driver.manage().window().maximize();
         BrowserUtils.wait(2);
         WebElement link = driver.findElement(By.linkText("Cybertek School"));
+
         //scrollIntoView - javascript method
         //arguments[0] - means 1st webelement after comma
         driver.executeScript("arguments[0].scrollIntoView(true)", link);

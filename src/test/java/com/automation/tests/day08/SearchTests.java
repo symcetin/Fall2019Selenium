@@ -47,7 +47,7 @@ public class SearchTests {
      * And user clicks on the first search item
      * And user verifies that title of the search item contains "Java"
      */
-    @Test(description = "Search for Java book on amazon")
+    @Test(description = "Search for Java book on amazon", priority = 1)
     public void amazonSearchTest(){
         driver.get("http://amazon.com");
         //there is a chance that item is not visible
@@ -85,7 +85,7 @@ public class SearchTests {
     @BeforeMethod
     public void setup(){
         //setup webdriver
-        WebDriverManager.chromedriver().version("79").setup();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
 

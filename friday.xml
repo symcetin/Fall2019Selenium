@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+        <suite name="Friday Tests">
+        <test name="Testing on a Friday">
+            <classes>
+                <class name="com.automation.tests.office_hour.nurullah.WebTables"/>
+                <class name="com.automation.tests.office_hour.nurullah.Nurullah_JSExecutor"></class>
+            </classes>
+        </test>
+</suite>

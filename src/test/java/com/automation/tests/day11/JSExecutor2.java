@@ -2,10 +2,12 @@ package com.automation.tests.day11;
 
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,7 +18,8 @@ public class JSExecutor2 {
 
     @BeforeMethod
     public void setup(){
-        driver = DriverFactory.createDriver("chrome");
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.get("http://practice.cybertekschool.com/");
         driver.manage().window().maximize();
     }
@@ -94,7 +97,7 @@ public class JSExecutor2 {
         //href = link, URL
         WebElement link = driver.findElement(By.linkText("Cybertek School"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("");
+        js.executeScript("window.scrollBy(0,250)");
     }
 
     @Test

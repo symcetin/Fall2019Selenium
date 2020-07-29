@@ -51,7 +51,9 @@ public class PracticeTests {
         String actual = driver.findElement(By.className("subheader")).getText();
         //if assertion fails - it will throw exception and message will be printed
         //3 parameters: (expected, actual, "message in case of error")
-        Assert.assertEquals(actual, expected, "Sub-header message is not matching!");
+        Assert.assertEquals(actual,expected, "Sub-header message is not matching!");
+
+
     }
 
     /**
@@ -79,7 +81,7 @@ public class PracticeTests {
 
     @BeforeMethod
     public void setup(){
-        WebDriverManager.chromedriver().version("79").setup();
+        WebDriverManager.chromedriver().setup();
         //INTERVIEW QUESTION: HOW TO HANDLE SSL ISSUES IN SELENIUM?
         //ChromeOptions - use to customize browser for tests
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -89,6 +91,7 @@ public class PracticeTests {
         driver = new ChromeDriver(chromeOptions);
         driver.get("http://practice.cybertekschool.com/");
         driver.manage().window().maximize();
+
     }
 
     /**

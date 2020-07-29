@@ -21,7 +21,7 @@ public class WebTables {
 
     @BeforeMethod
     public void setup() {
-        WebDriverManager.chromedriver().version("79").setup();
+        WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         //headless mode makes execution twice faster
         //it does everything except file uploading
